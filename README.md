@@ -42,13 +42,6 @@ A curated, non-filler collection of C projects that gradually increases in diffi
 
 ## 1. C Fundamentals (001–026)
 
-001. Temperature Converter
-Description: Convert between Celsius, Fahrenheit, and Kelvin with input validation.
-Difficulty: Beginner
-Topics: I/O, arithmetic, functions
-Estimated LOC: 80
-Libraries: stdio.h
-
 002. Number Base Converter
 Description: Convert integers between binary, octal, decimal, and hexadecimal.
 Difficulty: Beginner
