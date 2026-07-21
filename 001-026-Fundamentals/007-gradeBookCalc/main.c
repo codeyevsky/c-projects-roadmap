@@ -1,10 +1,15 @@
 #include <stdio.h>
 #include <unistd.h>
 
-/*
-    This one became so easy i think yall dont even need to 
-    see the code or commentary, but here it is anyway. Hope it helps :)
-*/
+/**
+ * Grade Book Calculator
+ * This program allows the user to input student names and their corresponding scores.
+ * It then calculates and displays the letter grades for each student based on their scores.
+ * Additionally, it provides class statistics including the average score, highest score, and lowest score.
+ * 
+ * This one became so easy i think yall dont even need to 
+ * see the code or commentary, but here it is anyway. Hope it helps :)
+ */
 
 typedef struct
 {

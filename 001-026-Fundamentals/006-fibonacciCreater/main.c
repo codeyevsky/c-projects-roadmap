@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <limits.h>
 
+/**
+ * Fibonacci Sequence Generator
+ * This program generates a Fibonacci sequence based on user-defined starting numbers and a maximum value.
+ * The user can input the first two numbers of the sequence and a maximum limit,
+ * and the program will display the Fibonacci numbers up to that limit.
+ */
+
 int validateInput(int *num);
 
 int main(void)

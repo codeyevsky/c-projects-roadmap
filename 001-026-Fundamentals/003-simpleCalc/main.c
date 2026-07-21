@@ -2,6 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * Simple Calculator
+ * This program allows the user to perform basic arithmetic operations: addition, subtraction, multiplication, and division.
+ * The user can input two numbers and an operator, and the program will display the result of the operation.
+ */
+
 /* Clears all remaining characters from the input buffer. */
 void clearInputBuffer(void);
 

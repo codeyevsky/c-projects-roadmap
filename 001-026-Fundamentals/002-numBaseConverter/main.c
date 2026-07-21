@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <ctype.h>
 
+/**
+ * Number Base Converter
+ * This program allows the user to convert numbers between different bases: Binary, Octal, Decimal, and Hexadecimal.
+ * The user can select the source base and the target base, input a number in the source base, 
+ * and the program will display the converted number in the target base.
+ */
+
 int  isValidBase(char base);
 int  baseToRadix(char base);
 int  charToDigit(char c);

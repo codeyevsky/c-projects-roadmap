@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * FizzBuzz Challenge
+ * This program prompts the user to input a number and then counts from 1 to that number.
+ * For multiples of 3, it prints "Fizz" instead of the number.
+ * For multiples of 5, it prints "Buzz" instead of the number.
+ * For numbers that are multiples of both 3 and 5, it prints "FizzBuzz".
+ */
+
 int main()
 {
     int number;

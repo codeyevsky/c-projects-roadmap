@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+/**
+ * Prime Number Checker
+ * This program allows the user to check whether a single number is prime
+ * or to find all prime numbers within a specified range.
+ * The user can choose between checking a single number or a range of numbers, 
+ * and the program will display the results accordingly.
+ */
+
 int validInt(int *number);
 int isPrime(int number);
 

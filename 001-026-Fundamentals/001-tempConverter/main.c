@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <ctype.h>
 
+/**
+ * Temperature Conversion Calculator
+ * This program allows the user to convert temperatures between Celsius and Fahrenheit.
+ * The user can choose the conversion direction and input the temperature value.
+ * The program will then display the converted temperature.
+ */
+
 /* Celsius -> Fahrenheit */
 double celsiusToFahrenheit(double celsius) {
     return (celsius * 1.8) + 32;

@@ -1,26 +1,5 @@
 ## 1. C Fundamentals (001–026)
 
-008. Roman Numeral Converter
-Description: Convert between Roman numerals and Arabic integers both directions.
-Difficulty: Beginner
-Topics: strings, lookup tables, loops
-Estimated LOC: 160
-Libraries: string.h
-
-009. Simple Interest & Loan Calculator
-Description: Compute simple/compound interest and amortization schedules.
-Difficulty: Beginner
-Topics: floating point, loops, formatting
-Estimated LOC: 150
-Libraries: math.h
-
-010. Unit Conversion Toolkit
-Description: Convert length, mass, volume, and speed across metric and imperial units.
-Difficulty: Beginner
-Topics: structs, function pointers, tables
-Estimated LOC: 220
-Libraries: stdio.h
-
 011. Digital Clock (terminal tick)
 Description: Print a live updating HH:MM:SS clock in the terminal.
 Difficulty: Beginner
