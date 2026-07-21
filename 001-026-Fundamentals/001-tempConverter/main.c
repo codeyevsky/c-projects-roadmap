@@ -11,7 +11,8 @@ double fahrenheitToCelsius(double fahrenheit) {
     return (fahrenheit - 32) / 1.8;
 }
 
-int main(void) {
+int main() 
+{
     char choice;
     double temperature;
 

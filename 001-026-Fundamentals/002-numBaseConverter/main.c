@@ -12,10 +12,15 @@ char readBase(void);
 
 int main(void)
 {
+
     char sourceBase;
     char targetBase;
     char input[65];
-    unsigned long long value;
+    unsigned long long value; 
+    /* 
+        unsigned long long value is for storing the decimal value of the input number,
+    */
+    
 
     printf("\nWelcome to the Number Base Converter!\n");
     printf("\nSelect the base of the number you want to convert:\n");
@@ -26,18 +31,21 @@ int main(void)
     printBaseMenu();
     targetBase = readBase();
 
+    /*
+        Check whether the first or second base is valid and if they are the same.
+    */
     if (!isValidBase(sourceBase))
     {
         printf("Invalid input for the first base.\n");
         return 1;
     }
-
+    
     if (!isValidBase(targetBase))
     {
         printf("Invalid input for the second base.\n");
         return 1;
     }
-
+    
     if (sourceBase == targetBase)
     {
         printf("Both bases are the same. No conversion needed.\n");
@@ -47,108 +55,30 @@ int main(void)
     printf("Enter value to convert: ");
     scanf("%64s", input);
 
+    /*
+        Validate that the number matches
+        the selected source base.
+    */
     if (!isValidNumber(input, sourceBase))
     {
         printf("Invalid number for the selected base.\n");
         return 1;
     }
 
+    /*
+        Convert the input string into
+        its decimal numeric value.
+    */
     value = parseToValue(input, sourceBase);
 
+    /*
+        Print the result in the target base.
+    */
     printf("The result of converting %s is: ", input);
     printInBase(value, targetBase);
     printf("\n");
 
     return 0;
-}
-
-/* Returns 1 if base is one of the supported base letters, 0 otherwise. */
-int isValidBase(char base)
-{
-    return base == 'B' || base == 'O' || base == 'D' || base == 'H';
-}
-
-/* Maps a base letter to its numeric radix, or 0 if the letter is unknown. */
-int baseToRadix(char base)
-{
-    switch (base)
-    {
-        case 'B': return 2;
-        case 'O': return 8;
-        case 'D': return 10;
-        case 'H': return 16;
-        default:  return 0;
-    }
-}
-
-/* Converts a single character to its digit value, or -1 if not a hex digit. */
-int charToDigit(char c)
-{
-    if (c >= '0' && c <= '9')
-        return c - '0';
-    if (c >= 'a' && c <= 'f')
-        return c - 'a' + 10;
-    if (c >= 'A' && c <= 'F')
-        return c - 'A' + 10;
-
-    return -1;
-}
-
-/* Checks that value is non-empty and every digit is legal for the base. */
-int isValidNumber(const char value[], char base)
-{
-    int radix = baseToRadix(base);
-    int i;
-
-    if (value[0] == '\0')
-        return 0;
-
-    for (i = 0; value[i] != '\0'; i++)
-    {
-        int digit = charToDigit(value[i]);
-
-        if (digit < 0 || digit >= radix)
-            return 0;
-    }
-
-    return 1;
-}
-
-/* Converts a validated string in the given base to a numeric value. */
-unsigned long long parseToValue(const char value[], char base)
-{
-    int radix = baseToRadix(base);
-    unsigned long long result = 0;
-    int i;
-
-    for (i = 0; value[i] != '\0'; i++)
-        result = result * radix + charToDigit(value[i]);
-
-    return result;
-}
-
-/* Prints a numeric value in the requested base (hex uses uppercase). */
-void printInBase(unsigned long long value, char base)
-{
-    const char digits[] = "0123456789ABCDEF";
-    int radix = baseToRadix(base);
-    char buffer[65];
-    int i = 0;
-
-    if (value == 0)
-    {
-        printf("0");
-        return;
-    }
-
-    while (value > 0)
-    {
-        buffer[i++] = digits[value % radix];
-        value /= radix;
-    }
-
-    while (i > 0)
-        printf("%c", buffer[--i]);
 }
 
 void printBaseMenu(void)
@@ -161,10 +91,146 @@ void printBaseMenu(void)
         "Choose a base: ");
 }
 
-/* Reads one base letter from the user and returns it in uppercase. */
 char readBase(void)
 {
     char base;
     scanf(" %c", &base);
     return toupper(base);
+}
+
+int isValidBase(char base)
+{
+    return base == 'B' || base == 'O' || base == 'D' || base == 'H';
+}
+
+/*
+    Converts the base letter into
+    its corresponding radix.
+    Binary (B) = 2, Octal (O) = 8, Decimal (D) = 10, Hexadecimal (H) = 16
+    default case returns 0 for invalid base.
+*/
+int baseToRadix(char base)
+{
+    switch (base)
+    {
+        case 'B': return 2; 
+        case 'O': return 8; 
+        case 'D': return 10;
+        case 'H': return 16;
+        default:  return 0;
+    }
+}
+
+/*
+    Converts a character into its
+    numeric digit value. (numbers 0-9 and letters A-F/a-f)
+*/
+int charToDigit(char c)
+{
+    if (c >= '0' && c <= '9')
+        return c - '0';
+
+    if (c >= 'a' && c <= 'f')
+        return c - 'a' + 10;
+
+    if (c >= 'A' && c <= 'F')
+        return c - 'A' + 10;
+
+    /*
+        Invalid character for a digit.
+    */
+    return -1;
+}
+
+int isValidNumber(const char value[], char base)
+{
+    int radix = baseToRadix(base);
+    int i;
+
+    if (value[0] == '\0')
+        return 0;
+
+    /*
+        Check every character.
+    */
+    for (i = 0; value[i] != '\0'; i++)
+    {
+        int digit = charToDigit(value[i]);
+
+        /*
+            Invalid digit or digit outside
+            the selected base.
+        */
+        if (digit < 0 || digit >= radix)
+            return 0;
+    }
+
+    return 1;
+}
+
+/* 
+    Converts a validated number string
+    into its decimal value.
+*/
+unsigned long long parseToValue(const char value[], char base)
+{
+    int radix = baseToRadix(base);
+    unsigned long long result = 0;
+    int i;
+
+    /*
+        Multiply the current value by the radix
+        and add the next digit.
+    */
+    for (i = 0; value[i] != '\0'; i++)
+        result = result * radix + charToDigit(value[i]);
+
+    return result;
+}
+
+void printInBase(unsigned long long value, char base)
+{
+    /*
+        Characters used for all supported bases.
+    */
+    const char digits[] = "0123456789ABCDEF";
+
+    /*
+        Base radix.
+    */
+    int radix = baseToRadix(base);
+
+    /*
+        Temporary buffer for digits.
+    */
+    char buffer[65];
+
+    /*
+        Buffer index.
+    */
+    int i = 0;
+
+    /*
+        Special case for zero.
+    */
+    if (value == 0)
+    {
+        printf("0");
+        return;
+    }
+
+    /*
+        Store digits in reverse order.
+    */
+    while (value > 0)
+    {
+        buffer[i++] = digits[value % radix];
+        value /= radix;
+    }
+
+    /*
+        Print digits in correct order.
+    */
+    while (i > 0)
+        printf("%c", buffer[--i]);
 }
