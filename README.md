@@ -1,19 +1,5 @@
 ## 1. C Fundamentals (001–026)
 
-011. Digital Clock (terminal tick)
-Description: Print a live updating HH:MM:SS clock in the terminal.
-Difficulty: Beginner
-Topics: time.h, loops, terminal control
-Estimated LOC: 90
-Libraries: time.h, unistd.h
-
-012. Number Guessing Game
-Description: Classic higher/lower guessing game with attempt tracking.
-Difficulty: Beginner
-Topics: random, loops, conditionals
-Estimated LOC: 90
-Libraries: stdlib.h, time.h
-
 013. Bitwise Operations Playground
 Description: Interactive tool that demonstrates AND/OR/XOR/shift on user integers.
 Difficulty: Beginner
