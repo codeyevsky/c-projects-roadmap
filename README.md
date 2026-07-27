@@ -1,19 +1,5 @@
 ## 1. C Fundamentals (001–026)
 
-013. Bitwise Operations Playground
-Description: Interactive tool that demonstrates AND/OR/XOR/shift on user integers.
-Difficulty: Beginner
-Topics: bitwise, binary display, masks
-Estimated LOC: 160
-Libraries: stdio.h
-
-014. GPA & CGPA Tracker
-Description: Track semester courses and compute weighted GPA over time.
-Difficulty: Beginner
-Topics: structs, arrays, file save
-Estimated LOC: 220
-Libraries: stdio.h
-
 015. Simple Menu-Driven Bank Ledger
 Description: In-memory deposit/withdraw/balance with a text menu.
 Difficulty: Beginner

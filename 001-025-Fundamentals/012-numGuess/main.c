@@ -12,6 +12,13 @@
 int main()
 {
     int number, guess, attempts = 0;
+    
+    /**
+     * srand(time(NULL)) initializes the random number generator with the current time as the seed.
+     * This ensures that the sequence of random numbers generated is different each time the program is run.
+     * rand() generates a pseudo-random number, and the modulo operation (% 100 + 1) ensures that
+     * the number is in the range of 1 to 100.
+     */
     srand(time(NULL)); 
     number = rand() % 100 + 1; 
 
