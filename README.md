@@ -1,25 +1,8 @@
+This Project will contain all of my projects to practice in c. thats all mess rn ik ik lol. 
+but it will be awesome when its done :). 
+
+
 ## 1. C Fundamentals (001–026)
-
-015. Simple Menu-Driven Bank Ledger
-Description: In-memory deposit/withdraw/balance with a text menu.
-Difficulty: Beginner
-Topics: state, functions, validation
-Estimated LOC: 200
-Libraries: stdio.h
-
-016. Matrix Basics Library
-Description: Add, multiply, transpose, and print 2D matrices of any size.
-Difficulty: Beginner
-Topics: 2D arrays, dynamic allocation, loops
-Estimated LOC: 250
-Libraries: stdlib.h
-
-017. String Utility Library
-Description: Reimplement strlen, strcpy, strcat, strcmp, strtok from scratch.
-Difficulty: Beginner
-Topics: pointers, arrays, null-termination
-Estimated LOC: 240
-Libraries: none
 
 018. Command-Line Stopwatch & Timer
 Description: Start/stop stopwatch and countdown timer with lap support.
